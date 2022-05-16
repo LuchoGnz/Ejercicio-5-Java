@@ -9,9 +9,10 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-     System.out.println("Ejercicio N°5: ");
+    		
+		 	System.out.println("Ejercicio N°5: ");
 		 	Scanner ingresoemp = new Scanner(System.in);
-		 	String[] Empleados = new String [20];
+		 	Empleado[] Empleados = new Empleado [20];
 		 	Integer sueldoBase;
 		 	String tipoe;
 		 	System.out.print("Ingrese sueldo base: ");
@@ -38,8 +39,9 @@ public class Principal {
 		 			tipoe = ingresoemp.nextLine();
 		 			sueldo = emp.calcularSueldo(tipoe, sueldoBase, ingresoemp);
 		 			emp.setSueldo(sueldo);
-		 			Empleados[i] = "Empleado N°" + (i+1) +":"+ " Apellido:" + emp.apellido + " Nombre:" + emp.nombre + " DNI:" + emp.dni + " E-mail:" + emp.email + " Sueldo:" + emp.getSueldo();
-		 					}
+		 			//Empleados[i] = "Empleado N°" + (i+1) +":"+ " Apellido:" + emp.apellido + " Nombre:" + emp.nombre + " DNI:" + emp.dni + " E-					     mail:" + emp.email + " Sueldo:" + emp.getSueldo();
+		 			Empleados[i]= emp;
+		 	}
 		 	
 		 	for (int i = 0; i < 2; i++) {
 		 		System.out.println(Empleados[i]);;
@@ -50,11 +52,11 @@ public class Principal {
 		 	
 		}
 	}
+
   
-  
-  Clase Empleados
-  
-  package ejercicios;
+CLASE EMPLEADO.  
+
+package ejercicios;
 
 import java.util.Scanner;
 
@@ -110,6 +112,10 @@ public class Empleado {
 		Info+=this.getEmail();
 		return Info;
 		
+	}
+	
+	public String toString() {
+		return "\nEmpleado [DNI=" + dni + ", Nombre=" + nombre + ", Apellido" + apellido + ", e-mail=" + email + ", Sueldo:" + sueldo;
 	}
 	
 	public double calcularSueldo (String tipoEmp, int sueldoBase, Scanner ingresoemp){
